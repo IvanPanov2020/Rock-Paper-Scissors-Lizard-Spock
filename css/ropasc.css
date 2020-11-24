@@ -1,5 +1,5 @@
 body {
-  background-image: url(/img/bbt.jpg);
+  background-image: url(../img/bbt.jpg);
   background-repeat: no-repeat;
 }
 .imgcom {
@@ -12,9 +12,6 @@ body {
   text-align: center;
   padding-left: 350px;
   padding-top: 10px;
-
-  /* padding-left: 30px;
-  margin-left: 30px; */
 }
 h1 {
   text-align: center;
