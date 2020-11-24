@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rock, Paper, Scissors , Lizard Spock</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- <link rel="stylesheet" href="css/normalize.css" /> -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="./css/ropasc.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+  </head>
+
+  <body>
+    <h1>Rock - Paper - Scissors - Lizard - Spock</h1>
+    <div class="popup" onclick="myFunction()">
+      <h5>
+        Click Here and Sheldon wil Explains the <br />
+        RULES of Rock, Paper, Scissors ,Lizard Spock
+      </h5>
+      <span class="popuptext" id="myPopup"
+        ><video width="400" controls>
+          <source
+            src="./img/final_5fb2a15130311c00afc829b5_346422.mp4"
+            type="video/mp4"
+            autoplay
+          />
+        </video>
+      </span>
+    </div>
+    <div id="scoredis">
+      <h2 id="disscore">Score :</h2>
+      <div class="horline"></div>
+
+      <div class="vertline"></div>
+      <br />
+      <h2 id="score1"></h2>
+      <h2 id="score2"></h2>
+    </div>
+
+    <!-- Computer Chois -->
+
+    <div class="game">
+      <img src="./img/rock.jpg" alt="" height="120" width="120" />
+      <img src="./img/paper.jpg" alt="" height="120" width="120" />
+      <img src="./img/scissors.jpg" alt="" height="120" width="120" />
+      <img src="./img/lizard.jpg" alt="" height="120" width="120" />
+      <img src="./img/spock.jpg" alt="" height="120" width="120" />
+
+      <div id="dispComCho">
+        <img src="" id="img2" alt="" ; />
+      </div>
+
+      <h2 id="battle"></h2>
+      <div id="playerCho">
+        <img src="" id="img1" alt="" ; />
+      </div>
+
+      <img
+        src="./img/rock.jpg"
+        alt=""
+        id="rock"
+        class="buttons"
+        height="120"
+        width="120"
+        style="border-radius: 65px"
+        onclick="showAll('rock')"
+      />
+
+      <img
+        src="./img/paper.jpg"
+        alt=""
+        id="paper"
+        class="buttons"
+        height="120"
+        width="120"
+        style="border-radius: 65px"
+        onclick="showAll('paper')"
+      />
+
+      <img
+        src="./img/scissors.jpg"
+        alt=""
+        id="scissors"
+        class="buttons"
+        height="120"
+        width="120"
+        style="border-radius: 65px"
+        onclick="showAll('scissors')"
+      />
+
+      <img
+        src="./img/lizard.jpg"
+        alt=""
+        id="lizard"
+        class="buttons"
+        height="120"
+        width="120"
+        style="border-radius: 65px"
+        onclick="showAll('lizard')"
+      />
+
+      <img
+        src="./img/spock.jpg"
+        alt=""
+        id="spock"
+        class="buttons"
+        height="120"
+        width="120"
+        style="border-radius: 65px"
+        onclick="showAll('scissors')"
+      />
+    </div>
+
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="./js/game.js"></script> -->
+    <script>
+      let yourScore = 0;
+      let computerScore = 0;
+
+      function showAll(c) {
+        let imgEl = document.getElementById("img1");
+        imgEl.src = "";
+
+        let element = document.getElementById(c).src;
+        imgEl.setAttribute("src", element);
+
+        let comChoice = Math.random();
+        if (comChoice <= 0.2) {
+          comChoice = "rock";
+        } else if (comChoice < 0.4) {
+          comChoice = "paper";
+        } else if (comChoice < 0.6) {
+          comChoice = "scissors";
+        } else if (comChoice < 0.8) {
+          comChoice = "lizard";
+        } else if (comChoice < 1) {
+          comChoice = "spock";
+        }
+        let imgEl2 = document.getElementById("img2");
+        imgEl2.src = "";
+        let element2 = document.getElementById(comChoice).src;
+        imgEl2.setAttribute("src", element2);
+
+        if (comChoice === c) {
+          document.getElementById("battle").innerHTML = "NOBODY WIN";
+        } else if (comChoice == "rock" && c == "paper") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Paper covers Rock";
+          yourScore++;
+        } else if (comChoice == "rock" && c == "scissors") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Rock crushes Scissors";
+          computerScore++;
+        } else if (comChoice == "rock" && c == "lizard") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN: Rock crushes Lizard";
+          computerScore++;
+        } else if (comChoice == "rock" && c === "spock") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Spock vaporizes Rock";
+          yourScore++;
+        } else if (comChoice == "paper" && c == "rock") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Paper covers Rock";
+          computerScore++;
+        } else if (comChoice == "paper" && c == "scissors") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Scissors cuts Paper";
+          yourScore++;
+        } else if (comChoice == "paper" && c == "lizard") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Lizard eats Paper";
+          yourScore++;
+        } else if (comChoice == "paper" && c === "spock") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Paper disproves Spock";
+          computerScore++;
+        } else if (comChoice == "scissors" && c == "rock") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Rock crushes Scissors";
+          computerScore++;
+        } else if (comChoice == "scissors" && c == "paper") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Scissors cuts Paper";
+          computerScore++;
+        } else if (comChoice == "scissors" && c == "lizard") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Scissors decapitates Lizard";
+          computerScore++;
+        } else if (comChoice == "scissors" && c == "spock") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Spock smashes Scissors";
+          yourScore++;
+        } else if (comChoice == "lizard" && c == "rock") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Rock crushes Lizard";
+          yourScore++;
+        } else if (comChoice == "lizard" && c == "paper") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Lizard eats Paper";
+          computerScore++;
+        } else if (comChoice == "lizard" && c == "scissors") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Scissors decapitates Lizard";
+          yourScore++;
+        } else if (comChoice === "lizard" && c == "spock") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Lizard poisons Spock";
+          computerScore++;
+        } else if (comChoice == "spock" && c == "rock") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN :Spock vaporizes Rock";
+          computerScore++;
+        } else if (comChoice == "spock" && c == "paper") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Paper disproves Spock";
+          yourScore++;
+        } else if (comChoice == "spock" && c == "scissors") {
+          document.getElementById("battle").innerHTML =
+            "AI WIN : Spock smashes Scissors";
+          computerScore++;
+        } else if (comChoice == "spock" && c == "lizard") {
+          document.getElementById("battle").innerHTML =
+            "YOU WIN : Lizard poisons Spock";
+          yourScore++;
+        }
+
+        document.getElementById("score1").innerHTML =
+          "Computer: " + computerScore;
+        document.getElementById("score2").innerHTML = "Player: " + yourScore;
+
+        imgEl.classList.add("imgcom");
+        imgEl2.classList.add("imgcom");
+      }
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+    </script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+      window.ga = function () {
+        ga.q.push(arguments);
+      };
+      ga.q = [];
+      ga.l = +new Date();
+      ga("create", "UA-XXXXX-Y", "auto");
+      ga("set", "anonymizeIp", true);
+      ga("set", "transport", "beacon");
+      ga("send", "pageview");
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async></script>
+  </body>
+</html>
