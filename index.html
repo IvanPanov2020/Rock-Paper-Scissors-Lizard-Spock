@@ -26,9 +26,9 @@
   <body>
     <h1>Rock - Paper - Scissors - Lizard - Spock</h1>
     <div class="popup" onclick="myFunction()">
-      <h5>
+      <h5 style="text-align: center">
         Click Here and Sheldon wil Explains the <br />
-        RULES of Rock, Paper, Scissors ,Lizard Spock
+        RULES of Rock, Paper, Scissors ,Lizard ,Spock
       </h5>
       <span class="popuptext" id="myPopup"
         ><video width="400" controls>
@@ -40,23 +40,50 @@
       </span>
     </div>
     <div id="scoredis">
-      <h2 id="disscore">Score :</h2>
-      <div class="horline"></div>
-
-      <div class="vertline"></div>
-      <br />
-      <h2 id="score1"></h2>
-      <h2 id="score2"></h2>
+      <table>
+        <tr>
+          <th id="disscore" colspan="2">Score :</th>
+        </tr>
+        <tr>
+          <td id="score1">Sheldon:</td>
+          <td id="score2">Player:</td>
+        </tr>
+      </table>
     </div>
 
     <!-- Computer Chois -->
 
     <div class="game">
-      <img src="./img/rock.jpg" alt="" height="120" width="120" />
-      <img src="./img/paper.jpg" alt="" height="120" width="120" />
-      <img src="./img/scissors.jpg" alt="" height="120" width="120" />
-      <img src="./img/lizard.jpg" alt="" height="120" width="120" />
-      <img src="./img/spock.jpg" alt="" height="120" width="120" />
+      <img
+        src="./img/New folder (2)/rock.jpg"
+        alt=""
+        height="120"
+        width="120"
+      />
+      <img
+        src="./img/New folder (2)/paper.jpg"
+        alt=""
+        height="120"
+        width="120"
+      />
+      <img
+        src="./img/New folder (2)/scissors.jpg"
+        alt=""
+        height="120"
+        width="120"
+      />
+      <img
+        src="./img/New folder (2)/lizard.jpg"
+        alt=""
+        height="120"
+        width="120"
+      />
+      <img
+        src="./img/New folder (2)/spock.jpg"
+        alt=""
+        height="120"
+        width="120"
+      />
 
       <div id="dispComCho">
         <img src="" id="img2" alt="" ; />
@@ -68,7 +95,7 @@
       </div>
 
       <img
-        src="./img/rock.jpg"
+        src="./img/New folder (2)/rock.jpg"
         alt=""
         id="rock"
         class="buttons"
@@ -79,7 +106,7 @@
       />
 
       <img
-        src="./img/paper.jpg"
+        src="./img/New folder (2)/paper.jpg"
         alt=""
         id="paper"
         class="buttons"
@@ -90,7 +117,7 @@
       />
 
       <img
-        src="./img/scissors.jpg"
+        src="./img/New folder (2)/scissors.jpg"
         alt=""
         id="scissors"
         class="buttons"
@@ -101,7 +128,7 @@
       />
 
       <img
-        src="./img/lizard.jpg"
+        src="./img/New folder (2)/lizard.jpg"
         alt=""
         id="lizard"
         class="buttons"
@@ -112,7 +139,7 @@
       />
 
       <img
-        src="./img/spock.jpg"
+        src="./img/New folder (2)/spock.jpg"
         alt=""
         id="spock"
         class="buttons"
@@ -121,6 +148,7 @@
         style="border-radius: 65px"
         onclick="showAll('spock')"
       />
+      <h2 id="chooseone">Choose One !</h2>
     </div>
 
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
@@ -163,11 +191,11 @@
           yourScore++;
         } else if (comChoice == "rock" && c == "scissors") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Rock crushes Scissors";
+            "SHELDON WIN : Rock crushes Scissors";
           computerScore++;
         } else if (comChoice == "rock" && c == "lizard") {
           document.getElementById("battle").innerHTML =
-            "AI WIN: Rock crushes Lizard";
+            "SHELDON WIN: Rock crushes Lizard";
           computerScore++;
         } else if (comChoice == "rock" && c === "spock") {
           document.getElementById("battle").innerHTML =
@@ -175,7 +203,7 @@
           yourScore++;
         } else if (comChoice == "paper" && c == "rock") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Paper covers Rock";
+            "SHELDON WIN : Paper covers Rock";
           computerScore++;
         } else if (comChoice == "paper" && c == "scissors") {
           document.getElementById("battle").innerHTML =
@@ -187,7 +215,7 @@
           yourScore++;
         } else if (comChoice == "paper" && c === "spock") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Paper disproves Spock";
+            "SHELDON WIN : Paper disproves Spock";
           computerScore++;
         } else if (comChoice == "scissors" && c == "rock") {
           document.getElementById("battle").innerHTML =
@@ -195,11 +223,11 @@
           yourScore++;
         } else if (comChoice == "scissors" && c == "paper") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Scissors cuts Paper";
+            "SHELDON WIN : Scissors cuts Paper";
           computerScore++;
         } else if (comChoice == "scissors" && c == "lizard") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Scissors decapitates Lizard";
+            "SHELDON WIN : Scissors decapitates Lizard";
           computerScore++;
         } else if (comChoice == "scissors" && c == "spock") {
           document.getElementById("battle").innerHTML =
@@ -211,7 +239,7 @@
           yourScore++;
         } else if (comChoice == "lizard" && c == "paper") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Lizard eats Paper";
+            "SHELDON WIN : Lizard eats Paper";
           computerScore++;
         } else if (comChoice == "lizard" && c == "scissors") {
           document.getElementById("battle").innerHTML =
@@ -219,11 +247,11 @@
           yourScore++;
         } else if (comChoice === "lizard" && c == "spock") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Lizard poisons Spock";
+            "SHELDON WIN : Lizard poisons Spock";
           computerScore++;
         } else if (comChoice == "spock" && c == "rock") {
           document.getElementById("battle").innerHTML =
-            "AI WIN :Spock vaporizes Rock";
+            "SHELDON WIN :Spock vaporizes Rock";
           computerScore++;
         } else if (comChoice == "spock" && c == "paper") {
           document.getElementById("battle").innerHTML =
@@ -231,7 +259,7 @@
           yourScore++;
         } else if (comChoice == "spock" && c == "scissors") {
           document.getElementById("battle").innerHTML =
-            "AI WIN : Spock smashes Scissors";
+            "SHELDON WIN : Spock smashes Scissors";
           computerScore++;
         } else if (comChoice == "spock" && c == "lizard") {
           document.getElementById("battle").innerHTML =
@@ -240,7 +268,7 @@
         }
 
         document.getElementById("score1").innerHTML =
-          "Computer: " + computerScore;
+          "Sheldon: " + computerScore;
         document.getElementById("score2").innerHTML = "Player: " + yourScore;
 
         imgEl.classList.add("imgcom");

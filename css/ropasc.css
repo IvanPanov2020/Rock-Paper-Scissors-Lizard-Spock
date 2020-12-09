@@ -1,6 +1,8 @@
 body {
-  background-image: url(../img/bbt.jpg);
+  background-image: url(../img/bb1.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  font-family: courier, arial, helvetica;
 }
 .imgcom {
   height: 120px;
@@ -11,43 +13,20 @@ body {
   width: 1100px;
   text-align: center;
   padding-left: 350px;
-  padding-top: 10px;
 }
 h1 {
   text-align: center;
   padding-right: 80px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 #scoredis {
   display: inline-block;
   padding-left: 10px;
 }
-h2 {
-  display: inline;
-  padding-right: 5px;
-  margin-right: 15px;
-}
-.vertline {
-  border-left: 4px solid black;
-  border-radius: 3px;
-  height: 70px;
-  position: absolute;
-  left: 165px;
-  margin-left: -3px;
-  top: 30;
-}
-.horline {
-  border-top: 4px solid black;
-  width: 270px;
-  padding-right: 10px;
-}
-#disscore {
-  padding-left: 120px;
-}
+
 .popup {
   float: right;
   padding-right: 20px;
-
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -66,5 +45,19 @@ h2 {
 }
 
 .buttons:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.9), 0 17px 50px 0 rgba(0, 0, 0, 0.9);
+  box-shadow: 0 12px 16px 0 rgba(6, 40, 92, 0.9),
+    0 17px 50px 0 rgba(6, 40, 92, 0.9);
+}
+table,
+th,
+td {
+  border: 5px double black;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 15px;
+  font-size: 25px;
+}
+#chooseone {
+  font-size: 30px;
+  color: rgba(6, 40, 92);
 }
